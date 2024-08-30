@@ -1,22 +1,33 @@
 "use client";
+import { SignInUSer } from "@/app/actions/authActions";
 import { LoginSchema, loginSchema } from "@/libs/schemas/loginSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button, Card, CardBody, CardHeader, Input } from "@nextui-org/react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 export default function LoginForm() {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors, isValid, isSubmitting },
   } = useForm<LoginSchema>({
     resolver: zodResolver(loginSchema),
-    mode: "onTouched"
+    mode: "onTouched",
   });
-  const onSubmit = (data: LoginSchema) => {
-    console.log(data);
+  const onSubmit = async (data: LoginSchema) => {
+    const result = await SignInUSer(data);
+
+    if (result.status === "success") {
+      toast.success("User Logged in successfully");
+      router.push("/members");
+    } else {
+      toast.error(result.error as string);
+    }
   };
   return (
     <Card className="w-2/5 p-4 mx-auto">
@@ -32,7 +43,7 @@ export default function LoginForm() {
               defaultValue=""
               type="email"
               variant="bordered"
-              {...register("email",)}
+              {...register("email")}
               isInvalid={!!errors.email}
               errorMessage={errors.email?.message as string}
             />
@@ -41,11 +52,18 @@ export default function LoginForm() {
               defaultValue=""
               type="password"
               variant="bordered"
-              {...register("password",)}
+              {...register("password")}
               isInvalid={!!errors.password}
               errorMessage={errors.password?.message as string}
             />
-            <Button isDisabled={!isValid} type="submit" fullWidth variant="solid" color="secondary">
+            <Button
+              isLoading={isSubmitting}
+              isDisabled={!isValid}
+              type="submit"
+              fullWidth
+              variant="solid"
+              color="secondary"
+            >
               Login
             </Button>
           </div>
