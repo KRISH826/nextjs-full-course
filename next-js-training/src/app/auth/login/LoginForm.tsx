@@ -25,6 +25,7 @@ export default function LoginForm() {
     if (result.status === "success") {
       toast.success("User Logged in successfully");
       router.push("/members");
+      router.refresh();
     } else {
       toast.error(result.error as string);
     }

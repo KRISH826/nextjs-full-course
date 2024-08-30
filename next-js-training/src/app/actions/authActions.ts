@@ -6,7 +6,7 @@ import bcrypt from "bcryptjs";
 import { ActionResult } from "../types";
 import { User } from "@prisma/client";
 import { LoginSchema } from "@/libs/schemas/loginSchema";
-import { signIn } from "@/auth";
+import { signIn, signOut } from "@/auth";
 import { AuthError } from "next-auth";
 
 export async function SignInUSer(data: LoginSchema): Promise<ActionResult<User>> {
@@ -32,6 +32,10 @@ export async function SignInUSer(data: LoginSchema): Promise<ActionResult<User>>
         return {status: 'error', error: "some error occurred"}
     }
   }
+}
+
+export async function SignOutUser () {
+  await signOut({redirectTo: "/"});
 }
 
 export async function RegisterUser(data: RegisterSchema): Promise<ActionResult<User>> {
