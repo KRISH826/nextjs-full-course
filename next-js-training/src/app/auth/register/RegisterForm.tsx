@@ -14,7 +14,7 @@ export default function RegisterForm() {
     handleSubmit,
     formState: { errors, isValid, isSubmitting },
   } = useForm<RegisterSchema>({
-    // resolver: zodResolver(registerSchema),
+    resolver: zodResolver(registerSchema),
     mode: "onTouched"
   });
   const onSubmit = async (data: RegisterSchema) => {
