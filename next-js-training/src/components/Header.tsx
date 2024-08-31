@@ -43,7 +43,7 @@ export default async function Header() {
                 as={Link}
                 color="primary"
                 variant="bordered"
-                href="/auth/login"
+                href="/login"
                 className="bg-transparent text-white border-white"
               >
                 Log In
@@ -53,7 +53,7 @@ export default async function Header() {
               <Button
                 as={Link}
                 color="primary"
-                href="/auth/register"
+                href="/register"
                 className="bg-white text-purple-500"
                 variant="flat"
               >

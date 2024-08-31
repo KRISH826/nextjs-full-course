@@ -71,7 +71,7 @@ export default function LoginForm() {
         </form>
         <p className="mt-1">
           Don't have an Account?{" "}
-          <Link className="text-purple-600" href="/auth/register">
+          <Link className="text-purple-600" href="/register">
             Sign Up
           </Link>
         </p>

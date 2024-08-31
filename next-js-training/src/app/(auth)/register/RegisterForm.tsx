@@ -78,7 +78,7 @@ export default function RegisterForm() {
         </form>
         <p className="mt-1">
           Already have an Account?{" "}
-          <Link className="text-purple-600" href="/auth/login">
+          <Link className="text-purple-600" href="/login">
             Sign In
           </Link>
         </p>
