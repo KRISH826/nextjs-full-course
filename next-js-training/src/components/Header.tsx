@@ -9,18 +9,17 @@ import { Codepen } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import Navlink from "./Navlink";
+import { auth } from "@/auth";
+import UserMenu from "./UserMenu";
 
-export default function Header() {
+export default async function Header() {
+  const session = await auth();
   return (
     <Navbar
       maxWidth="xl"
       className="bg-gradient-to-r from-purple-400 to-purple-700"
       classNames={{
-        item: [
-          "data-[active=true]:text-yellow-300",
-          "text-white",
-          "uppercase"
-        ]
+        item: ["data-[active=true]:text-yellow-300", "text-white", "uppercase"],
       }}
     >
       <NavbarBrand as={Link} href="/">
@@ -33,28 +32,36 @@ export default function Header() {
         <Navlink label="Messages" href="/messages" />
       </NavbarContent>
       <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
-          <Button
-            as={Link}
-            color="primary"
-            variant="bordered"
-            href="/auth/login"
-            className="bg-transparent text-white border-white"
-          >
-            Log In
-          </Button>
-        </NavbarItem>
-        <NavbarItem>
-          <Button
-            as={Link}
-            color="primary"
-            href="/auth/register"
-            className="bg-white text-purple-500"
-            variant="flat"
-          >
-            Sign Up
-          </Button>
-        </NavbarItem>
+        {session?.user ? (
+          <>
+            <UserMenu user={session.user} />
+          </>
+        ) : (
+          <>
+            <NavbarItem className="hidden lg:flex">
+              <Button
+                as={Link}
+                color="primary"
+                variant="bordered"
+                href="/login"
+                className="bg-transparent text-white border-white"
+              >
+                Log In
+              </Button>
+            </NavbarItem>
+            <NavbarItem>
+              <Button
+                as={Link}
+                color="primary"
+                href="/register"
+                className="bg-white text-purple-500"
+                variant="flat"
+              >
+                Sign Up
+              </Button>
+            </NavbarItem>
+          </>
+        )}
       </NavbarContent>
     </Navbar>
   );
