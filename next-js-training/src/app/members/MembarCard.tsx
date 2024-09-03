@@ -22,6 +22,7 @@ const MembarCard = ({ member }: Props) => {
           className="object-cover rounded-xl"
           src={member.image || "/images/user.png"}
           width={370}
+          height={200}
         />
         <div className="flex pt-3 flex-col gap-1">
           <h4 className="font-medium text-base mb-0 text-black">
