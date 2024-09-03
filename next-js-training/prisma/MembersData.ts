@@ -10,7 +10,7 @@ export const membersData = [
         description: "Sunt esse aliqua ullamco in incididunt consequat commodo. Nisi ad esse elit ipsum commodo fugiat est ad. Incididunt nostrud incididunt nostrud sit excepteur occaecat.\r\n",
         city: "Greenbush",
         country: "Martinique",
-        image: "/images/f1.jpeg"
+        image: "/images/f1.jpg"
     },
     {
         email: "karen@test.com",
@@ -23,7 +23,7 @@ export const membersData = [
         description: "Laborum dolore aliquip voluptate sunt cupidatat fugiat. Aliqua cillum deserunt do sunt ullamco aute Lorem nisi irure velit esse excepteur ex qui. Aliquip cupidatat officia ullamco duis veniam quis elit dolore nisi proident exercitation id cillum ullamco. In exercitation aliqua commodo veniam culpa duis commodo mollit et sint culpa.\r\n",
         city: "Celeryville",
         country: "Grenada",
-        image: "/images/f2.jpeg"
+        image: "/images/f2.jpg"
     },
     {
         email: "margo@test.com",
@@ -36,7 +36,7 @@ export const membersData = [
         description: "Dolor ut mollit sunt fugiat magna do eu et aliqua. Dolor consectetur reprehenderit irure non adipisicing ad irure sint id amet reprehenderit esse consectetur ex. Nisi sunt minim amet dolore eiusmod occaecat commodo nostrud tempor dolore velit. Fugiat labore duis nulla do officia voluptate ullamco. Velit ex ullamco cillum amet qui anim et ullamco adipisicing fugiat exercitation aliqua. Consectetur et do labore enim aliqua occaecat.\r\n",
         city: "Rosewood",
         country: "Svalbard and Jan Mayen Islands",
-        image: "/images/f3.jpeg"
+        image: "/images/f3.jpg"
     },
     {
         email: "lois@test.com",
@@ -49,7 +49,7 @@ export const membersData = [
         description: "Cillum elit nostrud enim laboris pariatur labore ipsum ut. Quis elit irure sint velit laboris anim Lorem laboris. Labore reprehenderit magna officia aliquip pariatur ea id id commodo. Culpa duis non ex nisi. Deserunt pariatur aliqua consequat reprehenderit sunt ex exercitation.\r\n",
         city: "Orviston",
         country: "Zimbabwe",
-        image: "/images/f4.jpeg"
+        image: "/images/f4.jpg"
     },
     {
         email: "ruthie@test.com",
@@ -62,7 +62,7 @@ export const membersData = [
         description: "Qui ipsum voluptate exercitation officia nisi velit adipisicing exercitation sint nulla do. Qui fugiat non nisi excepteur et duis elit consectetur ullamco velit fugiat. Sit do esse cupidatat quis eiusmod cupidatat.\r\n",
         city: "Germanton",
         country: "Antigua and Barbuda",
-        image: "/images/f5.jpeg"
+        image: "/images/f5.jpg"
     },
     {
         email: "todd@test.com",
@@ -75,7 +75,7 @@ export const membersData = [
         description: "Mollit elit cillum dolore ea laboris consequat excepteur eiusmod eiusmod qui magna mollit occaecat. Sint qui ut veniam non. Est non veniam magna in consectetur ullamco eiusmod in elit aute ea ipsum aliquip. Duis nisi do dolore ad. Consectetur incididunt quis exercitation aliquip officia. Ex anim pariatur veniam fugiat aute consequat quis nisi in quis.\r\n",
         city: "Cliff",
         country: "British Indian Ocean Territory",
-        image: "/images/m1.jpeg"
+        image: "/images/m1.jpg"
     },
     {
         email: "porter@test.com",
@@ -88,7 +88,7 @@ export const membersData = [
         description: "Qui adipisicing enim mollit magna fugiat. Quis laborum sit adipisicing Lorem veniam magna. Aliqua ex occaecat id duis aute excepteur quis eu eiusmod. Cillum consectetur dolore officia consequat veniam nulla qui occaecat ullamco ipsum sit incididunt aute ullamco.\r\n",
         city: "Welda",
         country: "Christmas Island",
-        image: "/images/m2.jpeg"
+        image: "/images/m2.jpg"
     },
     {
         email: "mayo@test.com",
@@ -101,7 +101,7 @@ export const membersData = [
         description: "Aliquip labore nisi veniam exercitation sit laborum nisi pariatur dolore tempor irure. Ad officia et eu cupidatat qui irure pariatur qui excepteur dolor ut eiusmod. Exercitation qui cillum elit elit officia elit culpa eu consequat cupidatat velit esse.\r\n",
         city: "Clarence",
         country: "Burkina Faso",
-        image: "/images/m3.jpeg"
+        image: "/images/m3.jpg"
     },
     {
         email: "skinner@test.com",
@@ -114,7 +114,7 @@ export const membersData = [
         description: "Cupidatat dolor irure officia qui consequat ea laborum excepteur esse. Esse qui cupidatat minim laborum velit occaecat officia. Nulla consectetur nisi laborum in eu fugiat ipsum magna. Ipsum sunt consectetur reprehenderit ea consectetur fugiat anim enim nostrud. Ut fugiat cupidatat aliquip ipsum laborum adipisicing sint tempor. Eu deserunt aute Lorem duis exercitation aute aute commodo ut eu elit elit commodo officia.\r\n",
         city: "Herald",
         country: "Poland",
-        image: "/images/m4.jpeg"
+        image: "/images/m4.jpg"
     },
     {
         email: "davis@test.com",
@@ -127,6 +127,6 @@ export const membersData = [
         description: "Voluptate sunt adipisicing ea nisi ex ullamco veniam dolor. Dolor do et exercitation in. Aute enim pariatur amet commodo. Deserunt consectetur quis culpa aliqua voluptate ipsum exercitation exercitation exercitation ea aliqua sunt.\r\n",
         city: "Lupton",
         country: "Luxembourg",
-        image: "/images/m5.jpeg"
+        image: "/images/m5.jpg"
     }
 ]
