@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning={false}>
       <body className={inter.className} suppressHydrationWarning={false}>
         <Header />
-        <main className="py-6 px-4 sm:px-12">
+        <main className="py-6 px-6 sm:px-12">
         <Provider>
           {children}
         </Provider>
