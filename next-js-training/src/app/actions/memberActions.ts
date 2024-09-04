@@ -2,8 +2,10 @@
 
 import { auth } from "@/auth"
 import { prisma } from "@/libs/prisma"
+import { Photo } from "@prisma/client";
 
 export async function getMembers() {
+    throw new Error ("Not implemente")
     const session = await auth();
     if(!session?.user) return null;
     try {
@@ -15,6 +17,7 @@ export async function getMembers() {
             }
         })
     } catch (error) {
+        throw error;
         console.log(error)
     }
 }
@@ -24,6 +27,20 @@ export async function getMemberUserById(userId: string) {
         return prisma.member.findUnique({
             where: {userId}
         })
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+export async function getMemberPhotosByUserId (userId: string){
+    try {
+        const member = await prisma.member.findUnique({
+            where: {userId},
+            select: {photos: true},
+        })
+
+        if(!member) return null;
+        return member.photos.map(p => p) as Photo[];
     } catch (error) {
         console.log(error)
     }

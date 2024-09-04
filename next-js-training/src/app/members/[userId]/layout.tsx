@@ -12,19 +12,17 @@ const Layout = async ({
   params: { userId: string };
 }) => {
   const member = await getMemberUserById(params.userId);
-  if (!member) return notFound()
+  if (!member) return notFound();
   return (
     <>
-    <div className="grid grid-cols-12 gap-5 h-[85vh]">
+      <div className="grid grid-cols-12 gap-5 h-[calc(100vh-115px)]">
         <div className="col-span-3">
-            <MemberSidebar member={member} />
+          <MemberSidebar member={member} />
         </div>
         <div className="col-span-9">
-            <Card className="w-full h-[85vh]">
-                {children}
-            </Card>
+          <Card className="w-full h-[calc(100vh-115px)]">{children}</Card>
         </div>
-    </div>
+      </div>
     </>
   );
 };
