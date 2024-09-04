@@ -26,7 +26,7 @@ const MemberSidebar = ({ member }: Props) => {
     { name: "Chat", href: `${basePath}/chats` },
   ];
   return (
-    <Card className="w-full items-center h-[85vh]">
+    <Card className="w-full items-center h-[calc(100vh-115px)]">
       <Image
         height={200}
         width={200}

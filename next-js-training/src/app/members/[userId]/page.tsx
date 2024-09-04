@@ -17,6 +17,7 @@ const MemBerDetailsPage = async ({
       </CardHeader>
       <Divider />
       <CardBody>
+        <p>{memberDetails.description}</p>
       </CardBody>
     </>
   );
