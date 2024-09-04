@@ -5,7 +5,6 @@ import { prisma } from "@/libs/prisma"
 import { Photo } from "@prisma/client";
 
 export async function getMembers() {
-    throw new Error ("Not implemente")
     const session = await auth();
     if(!session?.user) return null;
     try {
@@ -17,7 +16,6 @@ export async function getMembers() {
             }
         })
     } catch (error) {
-        throw error;
         console.log(error)
     }
 }
