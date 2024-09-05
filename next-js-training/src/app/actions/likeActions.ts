@@ -46,21 +46,23 @@ export async function fetchCurrentLikeId() {
   }
 }
 
-export async function fetchMemberLike(type = "source") {
+export async function fetchLikedMembers(type = 'source') {
   try {
-    const userId = await getAuthUserId();
-    switch (type) {
-      case "source":
-        return await fetchSourceLikes(userId);
-      case "target":
-        return await fetchTargetLikes(userId);
-      case "mutual":
-        return await fetchMutualLikes(userId);
-      default:
-        return [];
-    }
+      const userId = await getAuthUserId();
+
+      switch (type) {
+          case 'source':
+              return await fetchSourceLikes(userId);
+          case 'target':
+              return await fetchTargetLikes(userId);
+          case 'mutual':
+              return await fetchTargetLikes(userId);
+          default:
+              return [];
+      }
   } catch (error) {
-    console.log(error);
+      console.log(error);
+      throw error;
   }
 }
 async function fetchSourceLikes(userId: string) {
@@ -68,7 +70,6 @@ async function fetchSourceLikes(userId: string) {
     where: { sourceUserId: userId },
     select: { targetMember: true },
   });
-
   return sourceList.map((x) => x.targetMember);
 }
 
