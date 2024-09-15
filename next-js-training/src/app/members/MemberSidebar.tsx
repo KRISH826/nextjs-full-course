@@ -15,16 +15,11 @@ import React from "react";
 
 type Props = {
   member: Member;
+  navlinks: {name: string, href: string}[];
 };
 
-const MemberSidebar = ({ member }: Props) => {
-  const basePath = `/members/${member.userId}`;
+const MemberSidebar = ({ member, navlinks }: Props) => {
   const pathName = usePathname();
-  const navlinks = [
-    { name: "Profile", href: `${basePath}` },
-    { name: "Photos", href: `${basePath}/photos` },
-    { name: "Chat", href: `${basePath}/chats` },
-  ];
   return (
     <Card className="w-full items-center h-[calc(100vh-115px)]">
       <Image

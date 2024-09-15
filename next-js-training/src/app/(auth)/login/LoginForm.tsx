@@ -47,7 +47,7 @@ export default function LoginForm() {
               {...register("email")}
               isInvalid={!!errors.email}
               errorMessage={errors.email?.message as string}
-            />
+            />  
             <Input
               label="Password"
               defaultValue=""
