@@ -17,7 +17,7 @@ const Layout = async ({ children }: { children: ReactNode }) => {
     },
     {
       name: "Upload Photos",
-      href: "/members/uploadPhoto",
+      href: "/members/edit/photos",
     },
   ];
   return (
