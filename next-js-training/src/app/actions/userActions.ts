@@ -33,3 +33,28 @@ export async function upDateMemberProfile(data: MemberEditSchema) {
     return { status: "error", error: "Something went wrong" };
   }
 }
+
+export async function addImage(url: string, publicId: string) {
+  try {
+      const userId = await getAuthUserId();
+
+      return prisma.member.update({
+          where: {userId},
+          data: {
+              photos: {
+                  create: [
+                      {
+                          url,
+                          publicId
+                      }
+                  ]
+              }
+          }
+      })
+  } catch (error) {
+      console.log(error);
+      throw error;
+  }
+}
+
+
