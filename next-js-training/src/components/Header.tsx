@@ -11,9 +11,11 @@ import React from "react";
 import Navlink from "./Navlink";
 import { auth } from "@/auth";
 import UserMenu from "./UserMenu";
+import { getUserInfoForNav } from "@/app/actions/userActions";
 
 export default async function Header() {
   const session = await auth();
+  const userInfo = session?.user && (await getUserInfoForNav());
   return (
     <Navbar
       maxWidth="xl"
@@ -32,9 +34,9 @@ export default async function Header() {
         <Navlink label="Messages" href="/messages" />
       </NavbarContent>
       <NavbarContent justify="end">
-        {session?.user ? (
+        {userInfo ? (
           <>
-            <UserMenu user={session.user} />
+            <UserMenu userInfo={userInfo} />
           </>
         ) : (
           <>
