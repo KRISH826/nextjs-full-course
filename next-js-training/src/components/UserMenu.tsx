@@ -15,10 +15,10 @@ import Link from "next/link";
 import React from "react";
 
 type Props = {
-  user: Session["user"];
+  userInfo: { name: string | null; image: string | null };
 };
 
-const UserMenu = ({ user }: Props) => {
+const UserMenu = ({ userInfo }: Props) => {
   return (
     <Dropdown placement="bottom-end">
       <DropdownTrigger>
@@ -27,9 +27,9 @@ const UserMenu = ({ user }: Props) => {
           as="button"
           className="transition-transform"
           color="secondary"
-          name={user?.name || "user"}
+          name={userInfo?.name || "user"}
           size="sm"
-          src={user?.image || "images/user.png"}
+          src={userInfo?.image || "images/user.png"}
         />
       </DropdownTrigger>
       <DropdownMenu variant="flat" aria-label="User Actions Menu">
@@ -41,7 +41,7 @@ const UserMenu = ({ user }: Props) => {
             aria-label="username"
           >
             <p className="font-semibold">Signed in as</p>
-            <p className="font-semibold">{user?.name}</p>
+            <p className="font-semibold">{userInfo?.name}</p>
           </DropdownItem>
           <DropdownItem as={Link} href="/members/edit">
             Edit Profile
