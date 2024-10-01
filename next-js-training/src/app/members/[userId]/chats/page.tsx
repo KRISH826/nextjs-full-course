@@ -1,8 +1,11 @@
 import { CardBody, CardFooter, CardHeader, Divider } from "@nextui-org/react";
 import React from "react";
 import ChatForm from "./ChatForm";
+import { getMessageThread } from "@/app/actions/messageActions";
 
-const chatPage = () => {
+const chatPage = async ({params}: {params : {userId: string}}) => {
+  const message = await getMessageThread(params.userId);
+  console.log(message)
   return (
     <>
       <CardHeader>
