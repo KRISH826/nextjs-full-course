@@ -6,7 +6,7 @@ import { handleFormServerErrors } from "@/libs/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button, Input } from "@nextui-org/react";
 import { useParams, useRouter } from "next/navigation";
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { HiPaperAirplane } from "react-icons/hi2";
 
@@ -18,8 +18,13 @@ const ChatForm = () => {
     register,
     setError,
     reset,
+    setFocus,
     formState: { isSubmitting, isValid, errors },
   } = useForm<MessageSchema>({ resolver: zodResolver(messageSchema) });
+
+  useEffect(() => {
+    setFocus("text");
+  }, [setFocus]);
 
   const onSubmitForm = async (data: MessageSchema) => {
     const result = await createMessage(params.userId, data);
@@ -28,10 +33,13 @@ const ChatForm = () => {
     } else {
       reset();
       router.refresh();
+      setTimeout(() => {
+        setFocus('text')
+      }, 100);
     }
   };
   return (
-    <form onSubmit={handleSubmit(onSubmitForm)} className="w-full ">
+    <form onSubmit={handleSubmit(onSubmitForm)} className="w-full py-2">
       <div className="flex gap-2 items-center">
         <Input
           fullWidth
@@ -40,6 +48,7 @@ const ChatForm = () => {
           {...register("text")}
           isInvalid={!!errors.text}
           errorMessage={errors.text?.message}
+          autoComplete="off"
         />
         <Button
           isIconOnly

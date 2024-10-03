@@ -22,9 +22,10 @@ type MessageDto = {
     text: string;
     created: string;
     dateRead?: string | null;
-    senderId: string;
+    senderName?: string;
+    senderId?: string;
     senderImage?: string | null;
-    recipient: string;
-    recipientId: string;
+    recipient?: string;
+    recipientId?: string;
     recipientImage?: string | null;
 }

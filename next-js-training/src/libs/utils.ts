@@ -7,7 +7,7 @@ export function CalculateAge(dob: Date) {
 }
 
 export function formatShortDate(date: Date) {
-  return format(date, "dd MMM yyyy h:mm:a")
+  return format(date, "dd MMM yyyy h:mm:a");
 }
 
 export function handleFormServerErrors<TFieldValues extends FieldValues>(
@@ -22,4 +22,18 @@ export function handleFormServerErrors<TFieldValues extends FieldValues>(
   } else {
     setError("root.serverError", { message: errorResponse.error });
   }
+}
+
+export function transformImageUrl(imageUrl?: string | null) {
+  if (!imageUrl) return null;
+
+  if (!imageUrl.includes("cloudinary")) return imageUrl;
+
+  const uploadIndex = imageUrl.indexOf("/upload/") + "/upload/".length;
+
+  const transformation = "c_fill,w_300,h_300,g_faces/";
+
+  return `${imageUrl.slice(0, uploadIndex)}${transformation}${imageUrl.slice(
+    uploadIndex
+  )}`;
 }
