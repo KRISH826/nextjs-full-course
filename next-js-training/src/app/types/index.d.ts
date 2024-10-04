@@ -25,7 +25,7 @@ type MessageDto = {
     senderName?: string;
     senderId?: string;
     senderImage?: string | null;
-    recipient?: string;
+    recipientName?: string;
     recipientId?: string;
     recipientImage?: string | null;
 }

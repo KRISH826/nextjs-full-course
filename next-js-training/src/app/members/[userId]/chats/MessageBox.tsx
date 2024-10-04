@@ -45,7 +45,7 @@ const MessageBox = ({ message, currentUserId }: Props) => {
     return (
       <div className={messageContentClasses}>
         {renderMessageHeader()}
-        <p className="text-sm py-3 text-gray-900">{message.text}</p>
+        <p className="text-sm py-2 text-gray-900">{message.text}</p>
       </div>
     );
   };
